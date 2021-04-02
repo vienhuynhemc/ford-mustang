@@ -1,6 +1,124 @@
 * {
-  padding: 0;
-  margin: 0;
+    margin: 0;
+    padding: 0;
+    outline: none !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.wrap-header{
+    width: 100%;
+    top: 0;
+    background-color: white;
+    position: fixed;
+    z-index: 999999;
+    -webkit-box-shadow: -2px 8px 16px 7px rgba(209,201,209,1);
+-moz-box-shadow: -2px 8px 16px 7px rgba(209,201,209,1);
+box-shadow: -2px 8px 16px 7px rgba(209,201,209,1);
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.wrap-header #logo{
+    position: absolute !important;
+    margin: 25px;
+    width: 100px;
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+}
+
+.menu{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    float: right;
+    text-align: left;
+}
+
+.container {
+    height: 100px;
+    width: 80%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.wrap-menu{
+   position: relative;
+   float: right;
+    height: 100px;
+    width: 500px;
+}
+
+.menu{
+    height: 150px;
+    width: 700px;
+}
+
+ul.menu > li{
+    position: relative;
+    margin-left: 30px;
+    margin-right: 0;
+    float: right;
+    margin-top: 38px;
+}
+
+.menu li.active a :hover{
+    color: #D7300E  ;
+}
+
+.menu a{
+    position: relative;         
+    text-decoration: none;
+    text-transform: none;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.active :hover{
+    color: #D7300E ;
+}
+
+.active > a{
+    position: relative;
+}
+
+.active >a> div{
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    transform: translateY(46px);
+    top: 50%;
+    height:4px;
+    background-color:  #D7300E ;
+}
+
+.active :hover div{
+    opacity: 1;
+}
+
+#logo > img:nth-child(1){
+    width: 80px;
+    height: 80px;
+    transform: translateY(-15px);
+}
+
+#logo > img:nth-child(2){
+    transform: translateY(-15px);
 }
 
 .doing {
