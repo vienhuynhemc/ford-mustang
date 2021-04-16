@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0 !important;
+}
+
 .wrap-header {
   width: 100%;
   top: 0;
@@ -448,9 +452,14 @@ footer {
 }
 
 .banner ul li {
+  width: 33%;
   position: relative;
   padding: 28px 28px;
   border-right: 0.5px solid rgba(166, 166, 166, 0.5);
+}
+
+.banner ul li:nth-child(3) {
+  border: none;
 }
 
 .banner ul li .icon-title {
@@ -522,6 +531,7 @@ footer {
 
 .introduction ul {
   display: flex;
+  justify-content: space-around;
 }
 
 .introduction ul li {
