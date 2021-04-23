@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-trang-chu',
@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrangChuComponent implements OnInit {
 
+  @Input() isLogin: any;
+
   mucgia = 0;
   type = 0;
   diachi = 0;
   chedosort = 0;
+
 
   isShow = false;
 

@@ -10,7 +10,7 @@
                 <li id="danhsach" class="active ds"><a href="#">Danh sách nhà thuê<div></div></a></li>
                 <li id="gioithieu" class="active gt"><a href="#">Giới thiệu<div></div></a></li>
                 <li id="quytrinh" class="active qt"><a href="#">Quy trình tìm phòng<div></div></a></li>
-                <li id="add" ><a href="#">Thêm Phòng</a></li>
+                <li id="add" *ngIf="isLogin"><a href="#">Thêm Phòng</a></li>
             </ul>
         </div>
     </div>
@@ -209,6 +209,7 @@
                                                 <p> {{phongTro.tinh}}, {{phongTro.quan}}, {{phongTro.phuong}} </p>
                                             </div>
                                             <div class="info1__box2">
+
                                                 <p class="info1__price">Giá <strong> {{getPriceFormat(phongTro.gia)}}
                                                         VND </strong></p> <a class="c-btn1 btn-modal" data-modal="popup"
                                                     data-listing-link="/thue/nha/hcm/quan-thu-duc/id275540"
@@ -216,7 +217,12 @@
                                                     data-property-type-id="2" data-district-id="19" data-price=""
                                                     onclick="setBookingData(event,this);"> Đặt lịch xem </a>
                                             </div>
-                                        </div>
+
+                                            <div class="info1__box3" *ngIf="isLogin">
+                                              <a href="#" class="xoa">Xóa</a>
+                                              <a href="#" class="sua">Sửa</a>
+                                            </div>
+                                          </div>
 
                                     </div>
 
