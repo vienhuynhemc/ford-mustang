@@ -12,6 +12,7 @@ import { ChiTietPhan4Component } from './chi-tiet-phan4/chi-tiet-phan4.component
 import { FormsModule } from '@angular/forms';
 import { QuanLyComponent } from './quan-ly/quan-ly.component';
 import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
+import { SuaThongtinComponent } from './sua-thongtin/sua-thongtin.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
     ChiTietPhan4Component,
     ChiTietComponent,
     QuanLyComponent,
-    DangNhapComponent
+    DangNhapComponent,
+    SuaThongtinComponent
   ],
   imports: [
     BrowserModule,
