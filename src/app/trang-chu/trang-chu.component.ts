@@ -12,6 +12,8 @@ export class TrangChuComponent implements OnInit {
   diachi = 0;
   chedosort = 0;
 
+  isShowFull = true;
+
   isShow = false;
 
   arrayRoot = [
@@ -44,6 +46,10 @@ export class TrangChuComponent implements OnInit {
 
   constructor() {
 
+  }
+
+  showChiTiet(id: any) {
+    this.isShowFull = false;
   }
 
   sort() {

@@ -1,4 +1,4 @@
-<div class="wrap-header">
+<div class="wrap-header" *ngIf="isShowFull">
     <div class="container">
         <a href="index.html" id="logo">
             <img src="https://i.imgur.com/g7dphs3.png">
@@ -16,7 +16,7 @@
 </div>
 
 <!-- banner -->
-<div class="banner">
+<div class="banner" *ngIf="isShowFull">
     <div class="img"></div>
     <ul>
         <li>
@@ -56,7 +56,7 @@
 </div>
 
 <!-- Doing -->
-<div class="doing">
+<div class="doing" *ngIf="isShowFull">
     <h1>Quy trình tìm phòng</h1>
     <h2>Cách lựa chọn nhà của Ford Mustang ?</h2>
     <div></div>
@@ -103,7 +103,7 @@
 
 
 <!----------------------- danh sách sản phẩm và lọc--------------->
-<section id="section1" style="height: 1500px;">
+<section id="section1" style="height: 1500px;" *ngIf="isShowFull">
     <div class="container">
         <div class="c-main-title1">
             <h3 class="list">DANH SÁCH</h3>
@@ -170,7 +170,7 @@
 
                             <div class="row item" *ngFor="let phongTro of array" style="display: flex; width: 33%;">
 
-                                <div
+                                <a routerLink= "/chi-tiet/{{phongTro.id}}" (click)="showChiTiet(phongTro.id)"
                                     class="col-12 col-sm-6 col-md-6 col-lg-4 c-row-list1__card1 quickview-wrapper efch ef-img-b hover-item">
 
                                     <div class="content1">
@@ -219,7 +219,7 @@
 
                                     </div>
 
-                                </div>
+                                </a>
 
                             </div>
 
@@ -300,7 +300,7 @@
 
 
 <!-- introduction -->
-<div class="introduction">
+<div class="introduction" *ngIf="isShowFull">
     <div class="main-title">
         <h3>GIỚI THIỆU</h3>
         <h2>Vì sao chọn FORD MUSTANG</h2>
@@ -369,12 +369,12 @@
 </div>
 
 <!-- Question -->
-<div class="question">
+<div class="question" *ngIf="isShowFull">
     <h1>Bạn vẫn chưa tìm được phòng ưng ý ?</h1>
     <p>Có rất nhiều phòng được đăng lên đây, hãy để Ford Mustang tư vấn chọn giúp bạn !</p>
     <span>TƯ VẤN MIỄN PHÍ</span>
 </div>
-<footer>
+<footer *ngIf="isShowFull">
     <div class="footer-task">
         <div class="alpha">
             <img src="//img/LYQJMPS.png" class="footer-img">
@@ -466,6 +466,6 @@
 
     </div>
 </footer>
-<div class="footer-license">
+<div class="footer-license" *ngIf="isShowFull">
     2021 © Copyright FordMustang. All rights reserved.
 </div>
