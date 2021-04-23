@@ -1,0 +1,43 @@
+.bl-parameter-listing ul{
+
+  display: flex;
+  margin-left: 25px;
+  width: 500px;
+    -webkit-column-count: 4;
+    column-count: 4;
+    -webkit-column-gap: 10px;
+    column-gap: 10px;
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 4px;
+    margin: 0 0 24px;
+    padding: 13px 60px;
+}
+.bl-parameter-listing{
+  margin-top: 20px;
+}
+
+.bl-parameter-listing li {
+  list-style: none;
+
+  margin-right: 12px;
+  width: 83px;
+}
+
+
+.bl-parameter-listing li span {
+  display: block;
+  color: #242933;
+  font-size: 16px;
+  letter-spacing: .432353px;
+  line-height: 18px;
+}
+.xuonghang p {
+  width: 700px;
+  font-size: 16px;
+    font-family: sans-serif;
+}
+h3.tab-title  {
+  font-size: 29px;
+  font-family: sans-serif;
+}
