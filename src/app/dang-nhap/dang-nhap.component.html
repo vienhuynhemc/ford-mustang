@@ -1,14 +1,16 @@
-<p>dang-nhap works!</p>
 
 <body translate="no">
     <form action="" class="form">
         <div class="shape shape1"></div>
         <div class="shape shape2"></div>
         <div class="login login__form">
+          <div class="showEmpty" *ngIf = "isShowEmpty" >Tài khoản hoặc mật khẩu không được để trống</div>
+          <div class="showValid" *ngIf = "isShowInvalid" >Tài khoản hoặc mật khẩu sai</div>
             <div class="container cont__login">
-                <input type="text" class="email input" name="email" placeholder="Username">
-                <input type="password" class="password input" name="password" placeholder="Password">
-                <input type="submit" class="btn btn__login">
+
+                <input type="text" [(ngModel)]="username" class="email input" name="email" placeholder="Username">
+                <input type="password" [(ngModel)]="password" class="password input" name="password" placeholder="Password">
+                <button type="submit" (Click)="login()" class="btn btn__login">Gửi</button>
             </div>
 
         </div>

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { invalid } from '@angular/compiler/src/render3/view/util';
+import { Component, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-dang-nhap',
@@ -7,9 +11,55 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DangNhapComponent implements OnInit {
 
+   username = "";
+  password = "";
+
+  isShowInvalid = false;
+  isShowEmpty = false;
+
+ // checkLogin = false;
+
+  // @Output() isLogin1 = new EventEmitter();
+
+  array = [{user:"mochy", pass:"123"},
+{user:"ford", pass:"mustang"}]
+
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
+  login(){
+    this.isShowInvalid = false;
+    this.isShowEmpty = false;
+
+
+
+   let index = 0;
+    while(index < this.array.length){
+      let user = this.array[index].user;
+
+      let pass = this.array[index].pass;
+
+      if(this.username == user && pass == this.password){
+       // this.checkLogin = true;
+       // this.isLogin1();
+
+      }else if(this.username != user || pass != this.password){
+        this.isShowInvalid = true;
+      }else if(this.username == "" || pass == ""){
+        this.isShowEmpty = true;
+
+      }
+
+    }
+
+
+  }
+  // isLogin1(){
+  //   this.isLogin1.emit(this.checkLogin);
+  // }
 
 }
