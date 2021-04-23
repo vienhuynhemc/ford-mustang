@@ -14,6 +14,10 @@ export class TrangChuComponent implements OnInit {
   diachi = 0;
   chedosort = 0;
 
+<<<<<<< HEAD
+=======
+  isShowFull = true;
+>>>>>>> 9c0d1ae12f4601fa684864d1f825e778af5bef28
 
   isShow = false;
 
@@ -47,6 +51,10 @@ export class TrangChuComponent implements OnInit {
 
   constructor() {
 
+  }
+
+  showChiTiet(id: any) {
+    this.isShowFull = false;
   }
 
   sort() {
