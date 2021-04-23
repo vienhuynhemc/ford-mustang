@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-trang-chu',
   templateUrl: './trang-chu.component.html',
-  styleUrls: ['./trang-chu.component.scss']
+  styleUrls: ['./trang-chu.component.scss','./trang-chu2.component.scss']
 })
 export class TrangChuComponent implements OnInit {
 
