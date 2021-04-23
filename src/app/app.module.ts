@@ -9,6 +9,9 @@ import { ChiTietPhan2Component } from './chi-tiet-phan2/chi-tiet-phan2.component
 import { ChiTietPhan3Component } from './chi-tiet-phan3/chi-tiet-phan3.component';
 import { ChiTietPhan4Component } from './chi-tiet-phan4/chi-tiet-phan4.component';
 import { ChiTietComponent } from './chi-tiet/chi-tiet.component';
+import { FormsModule } from '@angular/forms';
+import { QuanLyComponent } from './quan-ly/quan-ly.component';
+import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { ChiTietComponent } from './chi-tiet/chi-tiet.component';
     ChiTietPhan2Component,
     ChiTietPhan3Component,
     ChiTietPhan4Component,
-    ChiTietComponent
+    ChiTietComponent,
+    QuanLyComponent,
+    DangNhapComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
