@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 
-  login = true;
+  constructor(private router: ActivatedRoute) {
+  }
 
-  title = 'ford-mustang';
+  ngOnInit(): void {
 
-  // isLogin2(islogin: boolean){
-
-  // }
+  }
 
 }

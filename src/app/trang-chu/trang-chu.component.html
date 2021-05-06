@@ -1,4 +1,4 @@
-<div class="wrap-header" *ngIf="isShowFull">
+<div class="wrap-header">
     <div class="container">
         <a href="index.html" id="logo">
             <img src="https://i.imgur.com/g7dphs3.png">
@@ -6,18 +6,27 @@
         </a>
 
         <div class="wrap-menu">
+            <img src="assets/img/logout.jpg" alt="" style="position: absolute;
+            z-index: 99;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            right: -48px;
+            top: 27px;
+            cursor: pointer;" *ngIf="iSSuccessLogin" (click)="dangXuat()">
             <ul class="menu">
                 <li id="danhsach" class="active ds"><a href="#">Danh sách nhà thuê<div></div></a></li>
                 <li id="gioithieu" class="active gt"><a href="#">Giới thiệu<div></div></a></li>
                 <li id="quytrinh" class="active qt"><a href="#">Quy trình tìm phòng<div></div></a></li>
-                <li id="add" *ngIf="!isShowLogin"><a href="#">Thêm Phòng</a></li>
+                <li id="add" *ngIf="iSSuccessLogin"><a routerLink="/them-phong">Thêm Phòng</a></li>
+                <li id="add" *ngIf="!iSSuccessLogin"><a routerLink="/dang-nhap">Đăng nhập</a></li>
             </ul>
         </div>
     </div>
 </div>
 
 <!-- banner -->
-<div class="banner" *ngIf="isShowFull">
+<div class="banner">
     <div class="img"></div>
     <ul>
         <li>
@@ -57,7 +66,7 @@
 </div>
 
 <!-- Doing -->
-<div class="doing" *ngIf="isShowFull">
+<div class="doing">
     <h1>Quy trình tìm phòng</h1>
     <h2>Cách lựa chọn nhà của Ford Mustang ?</h2>
     <div></div>
@@ -69,7 +78,7 @@
                 </div>
             </div>
             <div class="doing-content">
-                <img src = "assets/img/sale.png" alt="">
+                <img src="assets/img/sale.png" alt="">
                 <h3>Nhận thông tin</h3>
                 <p>Nhận thông tin từ người cho thuê</p>
             </div>
@@ -104,7 +113,7 @@
 
 
 <!----------------------- danh sách sản phẩm và lọc--------------->
-<section id="section1" style="height: 1500px;" *ngIf="isShowFull">
+<section id="section1" style="height: 1500px;">
     <div class="container">
         <div class="c-main-title1">
             <h3 class="list">DANH SÁCH</h3>
@@ -156,6 +165,7 @@
             </a>
         </div>
 
+        <p style="text-align: center;" *ngIf="isShow">Không tìm thấy kết quả nào</p>
         <section class="p-top1__list1" style="overflow: scroll; height: 1100px;">
 
             <div class="row row group-ef c-row-list1 loaded">
@@ -163,21 +173,20 @@
                 <div class="col-12">
                     <div class="listingRents">
 
-
                         <div class="owl-carousel s-dots s-auto_ s-height s-loop paging-bar owl-loaded owl-drag row-item"
                             style="width: 1170px;display: flex;flex-wrap: wrap;">
 
-                            <p style="text-align: center;" *ngIf="isShow">Không tìm thấy kết quả nào</p>
 
                             <div class="row item" *ngFor="let phongTro of array" style="display: flex; width: 33%;">
 
-                                <a routerLink= "/chi-tiet/{{phongTro.id}}" (click)="showChiTiet(phongTro.id)"
+                                <a
                                     class="col-12 col-sm-6 col-md-6 col-lg-4 c-row-list1__card1 quickview-wrapper efch ef-img-b hover-item">
 
                                     <div class="content1">
 
                                         <div class="box1 btn-modal">
                                             <div class="c-row-list1__img1 tRes_68" data-id="275540"
+                                                routerLink="/chi-tiet/{{phongTro.id}}" style="cursor: pointer;"
                                                 onclick="getListingDetailModal(event);">
                                                 <img src="https://cdn.propzy.vn/listing/thumbnail/map/2020/11/11/listing_a368fd01162c45891101423b46c71c047759af9e5258dd3b80f0cee1df59ac31.jpg"
                                                     alt="img">
@@ -211,18 +220,14 @@
                                             <div class="info1__box2">
 
                                                 <p class="info1__price">Giá <strong> {{getPriceFormat(phongTro.gia)}}
-                                                        VND </strong></p> <a class="c-btn1 btn-modal" data-modal="popup"
-                                                    data-listing-link="/thue/nha/hcm/quan-thu-duc/id275540"
-                                                    data-listing-id="275540" data-listing-type-id="2"
-                                                    data-property-type-id="2" data-district-id="19" data-price=""
-                                                    onclick="setBookingData(event,this);"> Đặt lịch xem </a>
+                                                        VND </strong></p>
                                             </div>
 
-                                            <div class="info1__box3" *ngIf="isShowLogin">
-                                              <a href="#" class="xoa">Xóa</a>
-                                              <a href="#" class="sua">Sửa</a>
+                                            <div class="info1__box3" *ngIf="iSSuccessLogin" style="margin-top:20px">
+                                                <span class="xoa" (click)="remove(''+phongTro.id)">Xóa</span>
+                                                <span class="sua">Sửa</span>
                                             </div>
-                                          </div>
+                                        </div>
 
                                     </div>
 
@@ -230,17 +235,18 @@
 
                             </div>
 
-                            <div *ngIf="isShow">
+                            <div *ngIf="isShow" style="display: flex; flex-wrap: wrap;justify-content: space-between;">
                                 <div class="row item" *ngFor="let phongTro of arrayRoot">
 
-                                    <div
-                                        class="col-12 col-sm-6 col-md-6 col-lg-4 c-row-list1__card1 quickview-wrapper efch ef-img-b hover-item">
 
+                                    <a style="width: 380px !important;"
+                                        class="col-12 col-sm-6 col-md-6 col-lg-4 c-row-list1__card1 quickview-wrapper efch ef-img-b hover-item">
                                         <div class="content1">
 
                                             <div class="box1 btn-modal">
                                                 <div class="c-row-list1__img1 tRes_68" data-id="275540"
-                                                    onclick="getListingDetailModal(event);">
+                                                    routerLink="/chi-tiet/{{phongTro.id}}" style="cursor: pointer;"
+                                                    onclick="getListingDetailModal(event)">
                                                     <img src="https://cdn.propzy.vn/listing/thumbnail/map/2020/11/11/listing_a368fd01162c45891101423b46c71c047759af9e5258dd3b80f0cee1df59ac31.jpg"
                                                         alt="img">
                                                 </div>
@@ -273,19 +279,17 @@
                                                 <div class="info1__box2">
                                                     <p class="info1__price">Giá <strong>
                                                             {{getPriceFormat(phongTro.gia)}}
-                                                            VND </strong></p> <a class="c-btn1 btn-modal"
-                                                        data-modal="popup"
-                                                        data-listing-link="/thue/nha/hcm/quan-thu-duc/id275540"
-                                                        data-listing-id="275540" data-listing-type-id="2"
-                                                        data-property-type-id="2" data-district-id="19" data-price=""
-                                                        onclick="setBookingData(event,this);"> Đặt lịch xem </a>
+                                                            VND </strong></p>
+                                                </div>
+
+                                                <div class="info1__box3" *ngIf="iSSuccessLogin" style="margin-top:20px">
+                                                    <span class="xoa" (click)="remove(''+phongTro.id)">Xóa</span>
+                                                    <span class="sua">Sửa</span>
                                                 </div>
                                             </div>
 
                                         </div>
-
-                                    </div>
-
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -307,7 +311,7 @@
 
 
 <!-- introduction -->
-<div class="introduction" *ngIf="isShowFull">
+<div class="introduction">
     <div class="main-title">
         <h3>GIỚI THIỆU</h3>
         <h2>Vì sao chọn FORD MUSTANG</h2>
@@ -376,12 +380,12 @@
 </div>
 
 <!-- Question -->
-<div class="question" *ngIf="isShowFull">
+<div class="question">
     <h1>Bạn vẫn chưa tìm được phòng ưng ý ?</h1>
     <p>Có rất nhiều phòng được đăng lên đây, hãy để Ford Mustang tư vấn chọn giúp bạn !</p>
     <span>TƯ VẤN MIỄN PHÍ</span>
 </div>
-<footer *ngIf="isShowFull">
+<footer>
     <div class="footer-task">
         <div class="alpha">
             <img src="assets/img/LYQJMPS.png" class="footer-img">
@@ -473,6 +477,6 @@
 
     </div>
 </footer>
-<div class="footer-license" *ngIf="isShowFull">
+<div class="footer-license">
     2021 © Copyright FordMustang. All rights reserved.
 </div>

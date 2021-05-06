@@ -19,6 +19,8 @@ export class ChiTietComponent implements OnInit {
   phongngu = "";
   phongtam = "";
   thongtinchitiet = "";
+  logioi = "";
+  tienich = "";
 
   arrayRoot = [
     {
@@ -235,6 +237,8 @@ export class ChiTietComponent implements OnInit {
         this.thongtinchitiet = this.arrayRoot[i].thongTinChiTiet;
         this.phongngu = this.arrayRoot[i].phongNgu;
         this.phongtam = this.arrayRoot[i].phongTam;
+        this.logioi = this.arrayRoot[i].loGioi;
+        this.tienich = this.arrayRoot[i].tienIch;
         break;
       }
     }

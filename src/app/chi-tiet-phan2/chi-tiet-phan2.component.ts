@@ -12,6 +12,7 @@ export class ChiTietPhan2Component implements OnInit {
   @Input() thongtinchitiet:any;
   @Input() phongngu:any;
   @Input() phongtam:any;
+  @Input() loGioi:any;
 
   constructor() { }
 
