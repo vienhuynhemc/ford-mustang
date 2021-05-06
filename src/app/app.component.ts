@@ -8,10 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 
-<<<<<<< HEAD
   login = true;
-=======
->>>>>>> 9c0d1ae12f4601fa684864d1f825e778af5bef28
 
   title = 'ford-mustang';
 

@@ -10,7 +10,7 @@
                 <li id="danhsach" class="active ds"><a href="#">Danh sách nhà thuê<div></div></a></li>
                 <li id="gioithieu" class="active gt"><a href="#">Giới thiệu<div></div></a></li>
                 <li id="quytrinh" class="active qt"><a href="#">Quy trình tìm phòng<div></div></a></li>
-                <li id="add" *ngIf="isLogin"><a href="#">Thêm Phòng</a></li>
+                <li id="add" *ngIf="!isShowLogin"><a href="#">Thêm Phòng</a></li>
             </ul>
         </div>
     </div>
@@ -218,7 +218,7 @@
                                                     onclick="setBookingData(event,this);"> Đặt lịch xem </a>
                                             </div>
 
-                                            <div class="info1__box3" *ngIf="isLogin">
+                                            <div class="info1__box3" *ngIf="isShowLogin">
                                               <a href="#" class="xoa">Xóa</a>
                                               <a href="#" class="sua">Sửa</a>
                                             </div>

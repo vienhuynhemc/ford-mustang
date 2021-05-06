@@ -8,16 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TrangChuComponent implements OnInit {
 
   @Input() isLogin: any;
+  isShowLogin= false;
 
   mucgia = 0;
   type = 0;
   diachi = 0;
   chedosort = 0;
 
-<<<<<<< HEAD
-=======
   isShowFull = true;
->>>>>>> 9c0d1ae12f4601fa684864d1f825e778af5bef28
 
   isShow = false;
 
@@ -175,6 +173,7 @@ export class TrangChuComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isShowLogin = this.isLogin;
   }
 
   getPriceFormat(gia: any) {

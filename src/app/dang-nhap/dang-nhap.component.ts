@@ -11,19 +11,19 @@ import { Router } from '@angular/router';
 })
 export class DangNhapComponent implements OnInit {
 
-   username = "";
+  username = "";
   password = "";
 
   isShowInvalid = false;
   isShowEmpty = false;
 
- // checkLogin = false;
+  // checkLogin = false;
 
-  // @Output() isLogin1 = new EventEmitter();
 
-  array = [{user:"mochy", pass:"123"},
-{user:"ford", pass:"mustang"}]
+  array = [{ user: "mochy", pass: "123" },
+  { user: "ford", pass: "mustang" }]
 
+  isTrue = false;
 
   constructor() { }
 
@@ -31,25 +31,22 @@ export class DangNhapComponent implements OnInit {
 
   }
 
-  login(){
+  login() {
     this.isShowInvalid = false;
     this.isShowEmpty = false;
+    
 
 
-
-   let index = 0;
-    while(index < this.array.length){
+    let index = 0;
+    while (index < this.array.length) {
       let user = this.array[index].user;
 
       let pass = this.array[index].pass;
 
-      if(this.username == user && pass == this.password){
-       // this.checkLogin = true;
-       // this.isLogin1();
-
-      }else if(this.username != user || pass != this.password){
+      if (this.username == user && pass == this.password) {
+      } else if (this.username != user || pass != this.password) {
         this.isShowInvalid = true;
-      }else if(this.username == "" || pass == ""){
+      } else if (this.username == "" || pass == "") {
         this.isShowEmpty = true;
 
       }
