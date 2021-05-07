@@ -9,9 +9,15 @@ export class ChiTietPhan3Component implements OnInit {
 
   constructor() { }
 
-  @Input () tienIch:any;
+  @Input() tienIch: any;
+  array: any;
 
   ngOnInit(): void {
+    this.array = [];
+    let arrayString = this.tienIch.split(",");
+    for (let i = 0; i < arrayString.length; i++) {
+      this.array[i] = arrayString[i];
+    }
   }
 
 }

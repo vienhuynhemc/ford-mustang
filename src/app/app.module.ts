@@ -14,7 +14,6 @@ import { QuanLyComponent } from './quan-ly/quan-ly.component';
 import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
 import { SuaThongtinComponent } from './sua-thongtin/sua-thongtin.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +25,7 @@ import { SuaThongtinComponent } from './sua-thongtin/sua-thongtin.component';
     ChiTietComponent,
     QuanLyComponent,
     DangNhapComponent,
-    SuaThongtinComponent
+    SuaThongtinComponent,
   ],
   imports: [
     BrowserModule,

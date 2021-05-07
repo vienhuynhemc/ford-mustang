@@ -4,8 +4,7 @@
             <h3>Thêm phòng mới</h3>
 
             <div class="save">
-                <a href="#"><button
-                        type="button" style="float: left">
+                <a href="#"><button type="button" style="float: left">
                         <i class="far fa-arrow-alt-circle-left"></i> Quay lại
                     </button></a>
                 <button type="button" data-toggle="modal" data-target="#add-product">Thêm</button>
@@ -70,7 +69,7 @@
                             </div>
                             <div class="input">
                                 <select class="" name="type">
-                                    <option selected  disabled>Chọn loại phòng</option>
+                                    <option selected disabled>Chọn loại phòng</option>
                                     <option value="MOI">Nhà nguyên căn</option>
                                     <option value="CU">Phòng trọ</option>
                                 </select>
@@ -150,13 +149,10 @@
                             <div class="title">
                                 <p>Hình ảnh*</p>
                             </div>
-
                             <div class="input">
-
-                                <input name="area" type="file" value="" accept="image/gif, image/jpeg, image/png" />
-
-
-
+                                <img [src]="url" alt="Hình ảnh" style="width: 500px;">
+                                <input (change)="onselectFile($event)" name="area" type="file" value=""
+                                    accept="image/gif, image/jpeg, image/png" />
                             </div>
 
                         </li>
@@ -200,7 +196,8 @@
                                         <div class="col-12">
                                             <input id="hospitol" type="checkbox" value="" />
                                             <label style="    margin: 0px 10px;
-                                            color: #484848;" for="hospitol">Gần bệnh viện</label></div>
+                                            color: #484848;" for="hospitol">Gần bệnh viện</label>
+                                        </div>
                                     </div>
 
 
@@ -281,21 +278,22 @@
 
         </div>
     </div>
-    <div class="modal fade" id="add-product" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="add-product" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Xác nhận</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     Bạn có muốn thêm phòng mới?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button type="button" class="btn btn-primary">Xác nhận</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="themPhongMoi()">Xác nhận</button>
                 </div>
             </div>
         </div>

@@ -1,17 +1,10 @@
 <!-- <p>chi-tiet-phan3 works!</p> -->
 <div class="wrap-ti">
   <h1>Tiện ích</h1>
-  <ul>
-    
-    <li>Gần chợ, siêu thị</li>
-    <li>Gần bệnh viện</li>
-    <li>Gần công viên</li>
-    <li>Gần trường học</li>
-    </ul>
-    <ul>
-    <li>Gần mặt tiền đường</li>
-    <li>Gần trung tâm</li>
-    <li>Sân để xe rộng rãi</li>
-    <li>Khu vực an ninh</li>
+  <ul *ngFor="let item of array">
+    <li *ngIf="item == 1">Gần trạm xe buýt</li>
+    <li *ngIf="item == 2">Gần chợ</li>
+    <li *ngIf="item == 3">Gần trường học</li>
+    <li *ngIf="item == 4">Gần bệnh viện</li>
   </ul>
 </div>

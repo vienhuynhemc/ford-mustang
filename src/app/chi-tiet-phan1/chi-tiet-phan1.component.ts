@@ -10,6 +10,7 @@ export class ChiTietPhan1Component implements OnInit {
   @Input() ten: any;
   @Input() diachi: any;
   @Input() tien: any;
+  @Input() hinh:any;
   constructor() { }
 
   ngOnInit(): void {
