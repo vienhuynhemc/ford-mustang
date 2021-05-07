@@ -4,7 +4,8 @@
 }
 
 .four-images {
-  height: 430px;
+  height: 500px;
+  width: 1000px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,7 +74,7 @@
 img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100% !important;
+  width: 1000px;
   height: 100% !important;
   border-radius: 8px;
 }
@@ -129,3 +130,5 @@ img {
   margin-bottom: 13px;
 }
 /*# sourceMappingURL=chi-tiet-phan1.component.css.map */
+
+.bl-parameter

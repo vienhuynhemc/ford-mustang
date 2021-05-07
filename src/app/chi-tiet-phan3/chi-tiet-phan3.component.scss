@@ -3,26 +3,31 @@ h1{
   font-family: Arial, Helvetica, sans-serif;
   font-size: x-large;
   font-weight: bolder;
+  margin-bottom: 20px;
+}
+*{
+  margin-top: 20px;
+  margin: auto;
+  max-width: 1100px;
 }
 
 li{
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
   font-weight: normal;
-  width: 25%;
+  width: 200px;
 }
 
 ul{
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 20px;
+  display: inline-block;
+
 }
 
 .wrap-ti{
-  -webkit-box-shadow: 0px 2px 28px 3px rgba(153,147,153,1);
-  -moz-box-shadow: 0px 2px 28px 3px rgba(153,147,153,1);
-  box-shadow: 0px 2px 28px 3px rgba(153,147,153,1);
+
   height: fit-content;
   display: block;
-  width: 50%;
+  width: 1100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
