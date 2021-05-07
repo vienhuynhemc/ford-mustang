@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import data from "../_files/data.json";
 
 @Component({
-  selector: 'app-trang-chu',
-  templateUrl: './trang-chu.component.html',
-  styleUrls: ['./trang-chu.component.scss', './trang-chu2.component.scss']
+  selector: 'app-yeu-thich',
+  templateUrl: './yeu-thich.component.html',
+  styleUrls: ['./yeu-thich.component.scss','./yeu-thich.component2.scss']
 })
+export class YeuThichComponent implements OnInit {
 
-export class TrangChuComponent implements OnInit {
 
   mucgia = 0;
   type = 0;
@@ -16,9 +14,6 @@ export class TrangChuComponent implements OnInit {
   chedosort = 0;
 
   isShow = false;
-
-  // login
-  iSSuccessLogin = false;
 
   arrayRoot: {
     id: number,
@@ -40,6 +35,7 @@ export class TrangChuComponent implements OnInit {
     thongTinChiTiet: string,
     tienIch: string,
   }[] = [];
+
   array: {
     id: number,
     ten: string,
@@ -61,48 +57,12 @@ export class TrangChuComponent implements OnInit {
     tienIch: string,
   }[] = [];
 
-  constructor(private _router: Router) {
+  constructor() { }
 
-  }
-
-  yeuThich(id: any) {
-    let arrayYeuThich: {
-      id: number,
-      ten: string,
-      dienTich: string,
-      gia: number,
-      tinh: string,
-      quan: string,
-      phuong: string,
-      diachi: string,
-      hinh: string,
-      ngayThem: string,
-      loai: number,
-      chieuDai: string,
-      chieuRong: string,
-      phongNgu: string,
-      phongTam: string,
-      loGioi: string,
-      thongTinChiTiet: string,
-      tienIch: string,
-    }[] = JSON.parse(localStorage.getItem("yeuThich") || '{}');
-    for (let i = 0; i < this.arrayRoot.length; i++) {
-      if (this.arrayRoot[i].id == id) {
-        let count = 0;
-        for (let j = 0; j < arrayYeuThich.length; j++) {
-          if (arrayYeuThich[j].id == id) {
-            count++;
-            break;
-          }
-        }
-        if (count == 0) {
-          let object = this.arrayRoot[i];
-          arrayYeuThich.push(object);
-          localStorage.setItem("yeuThich", JSON.stringify(arrayYeuThich));
-          break;
-        }
-      }
-    }
+  ngOnInit(): void {
+    let objectArray = localStorage.getItem("yeuThich");
+    this.array = JSON.parse(objectArray || '{}');
+    this.arrayRoot = JSON.parse(objectArray || '{}');
   }
 
   remove(id: any) {
@@ -124,7 +84,7 @@ export class TrangChuComponent implements OnInit {
         count++;
       }
     }
-    localStorage.setItem("data", JSON.stringify(this.arrayRoot));
+    localStorage.setItem("yeuThich", JSON.stringify(this.arrayRoot));
   }
 
   sort() {
@@ -261,22 +221,6 @@ export class TrangChuComponent implements OnInit {
     else if (this.diachi == 1) return "Quận 1"
     else if (this.diachi == 2) return "Quận 2"
     else return "Quận 4";
-  }
-
-  dangXuat() {
-    localStorage.removeItem("user");
-    window.location.reload();
-  }
-
-  ngOnInit(): void {
-    // localStorage.setItem("data",JSON.stringify(this.arrayRoot));
-    let user: { username: string, password: string } = JSON.parse(localStorage.getItem("user") || '{}');
-    if (user.username != undefined) {
-      this.iSSuccessLogin = true;
-    }
-    let objectArray = localStorage.getItem("data");
-    this.arrayRoot = JSON.parse(objectArray || '{}');
-    this.array = JSON.parse(objectArray || '{}');
   }
 
   getPriceFormat(gia: any) {

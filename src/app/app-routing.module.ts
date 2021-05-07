@@ -1,3 +1,4 @@
+import { YeuThichComponent } from './yeu-thich/yeu-thich.component';
 import { QuanLyComponent } from './quan-ly/quan-ly.component';
 import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,9 @@ const routes: Routes = [
   { path: '', component: TrangChuComponent },
   { path: 'chi-tiet/:id', component: ChiTietComponent },
   { path: 'dang-nhap', component: DangNhapComponent },
-  { path: 'them-phong', component: QuanLyComponent }];
+  { path: 'them-phong', component: QuanLyComponent },
+  {path: 'yeu-thich', component: YeuThichComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

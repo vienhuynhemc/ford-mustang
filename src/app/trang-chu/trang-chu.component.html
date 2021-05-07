@@ -1,4 +1,5 @@
 <div class="wrap-header">
+    
     <div class="container">
         <a href="index.html" id="logo">
             <img src="https://i.imgur.com/g7dphs3.png">
@@ -18,8 +19,14 @@
                 <li id="danhsach" class="active ds"><a href="#">Danh sách nhà thuê<div></div></a></li>
                 <li id="gioithieu" class="active gt"><a href="#">Giới thiệu<div></div></a></li>
                 <li id="quytrinh" class="active qt"><a href="#">Quy trình tìm phòng<div></div></a></li>
+<<<<<<< HEAD
+                <li id="yeuThich" class="active qt"><a routerLink="/yeu-thich">Yêu thích<div></div></a></li>
+                <li id="add" class="active qt" *ngIf="iSSuccessLogin"><a routerLink="/them-phong">Thêm Phòng</a></li>
+                <li id="add" class="active qt" *ngIf="!iSSuccessLogin"><a routerLink="/dang-nhap">Đăng nhập</a></li>
+=======
                 <li id="add" *ngIf="iSSuccessLogin"><a routerLink="/them-phong">Thêm Phòng</a></li>
-                <li id="add" *ngIf="!iSSuccessLogin"><a routerLink="/dang-nhap">Đăng nhập</a></li>
+                <li id="add" *ngIf="!iSSuccessLogin" class="active qt"><a routerLink="/dang-nhap">Đăng nhập<div></div></a></li>
+>>>>>>> 37174bc116c4e916199a61ae40d125c34ee3a902
             </ul>
         </div>
     </div>
@@ -188,8 +195,7 @@
                                             <div class="c-row-list1__img1 tRes_68" data-id="275540"
                                                 routerLink="/chi-tiet/{{phongTro.id}}" style="cursor: pointer;"
                                                 onclick="getListingDetailModal(event);">
-                                                <img src="{{phongTro.hinh}}"
-                                                    alt="img">
+                                                <img src="{{phongTro.hinh}}" alt="img">
                                             </div>
                                             <div class="box1__item1">
                                                 <ul>
@@ -226,6 +232,7 @@
                                             <div class="info1__box3" *ngIf="iSSuccessLogin" style="margin-top:20px">
                                                 <span class="xoa" (click)="remove(''+phongTro.id)">Xóa</span>
                                                 <span class="sua">Sửa</span>
+                                                <span class="sua" (click)="yeuThich(''+phongTro.id)">Yêu thích</span>
                                             </div>
                                         </div>
 
@@ -285,6 +292,7 @@
                                                 <div class="info1__box3" *ngIf="iSSuccessLogin" style="margin-top:20px">
                                                     <span class="xoa" (click)="remove(''+phongTro.id)">Xóa</span>
                                                     <span class="sua">Sửa</span>
+                                                    <span class="sua" (click)="yeuThich(''+phongTro.id)">Yêu thích</span>
                                                 </div>
                                             </div>
 
