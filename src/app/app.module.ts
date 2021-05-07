@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { QuanLyComponent } from './quan-ly/quan-ly.component';
 import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
 import { SuaThongtinComponent } from './sua-thongtin/sua-thongtin.component';
+import { YeuThichComponent } from './yeu-thich/yeu-thich.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SuaThongtinComponent } from './sua-thongtin/sua-thongtin.component';
     QuanLyComponent,
     DangNhapComponent,
     SuaThongtinComponent,
+    YeuThichComponent,
   ],
   imports: [
     BrowserModule,
