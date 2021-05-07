@@ -27,11 +27,7 @@
                             </div>
 
                             <div class="input">
-
-                                <input name="name" placeHolder="Nhập tên phòng" type="text" value="">
-
-
-
+                                <input [(ngModel)]="ten" placeHolder="Nhập tên phòng" type="text" value="">
                             </div>
 
                         </li>
@@ -42,7 +38,8 @@
 
                             <div class="input">
 
-                                <input name="area" placeHolder="Nhập diện tích phòng" type="number" value="">
+                                <input [(ngModel)]="dienTich" name="area" placeHolder="Nhập diện tích phòng" type="number"
+                                    value="">
 
 
 
@@ -56,7 +53,7 @@
 
                             <div class="input">
 
-                                <input name="area" placeHolder="Nhập giá phòng" type="number" value="">
+                                <input name="area" [(ngModel)]="gia" placeHolder="Nhập giá phòng" type="number" value="">
 
 
 
@@ -68,10 +65,9 @@
                                 <p>Loại phòng*</p>
                             </div>
                             <div class="input">
-                                <select class="" name="type">
-                                    <option selected disabled>Chọn loại phòng</option>
-                                    <option value="MOI">Nhà nguyên căn</option>
-                                    <option value="CU">Phòng trọ</option>
+                                <select class="" name="type" [(ngModel)]="loai">
+                                    <option value="0" selected>Nhà nguyên căn</option>
+                                    <option value="1">Phòng trọ</option>
                                 </select>
                             </div>
                         </li>
@@ -82,7 +78,8 @@
 
                             <div class="input">
 
-                                <input name="area" placeHolder="Nhập chiều dài" type="number" value="">
+                                <input name="area" [(ngModel)]="chieuDai" placeHolder="Nhập chiều dài" type="number"
+                                    value="">
 
 
 
@@ -96,7 +93,8 @@
 
                             <div class="input">
 
-                                <input name="area" placeHolder="Nhập chiều rộng" type="number" value="">
+                                <input name="area" [(ngModel)]="chieuRong" placeHolder="Nhập chiều rộng" type="number"
+                                    value="">
 
 
 
@@ -110,7 +108,8 @@
 
                             <div class="input">
 
-                                <input name="area" placeHolder="Nhập số phòng ngủ" type="number" value="">
+                                <input name="area" [(ngModel)]="phongNgu" placeHolder="Nhập số phòng ngủ" type="number"
+                                    value="">
 
 
 
@@ -124,7 +123,8 @@
 
                             <div class="input">
 
-                                <input name="area" placeHolder="Nhập số phòng tắm" type="number" value="">
+                                <input name="area" [(ngModel)]="phongTam" placeHolder="Nhập số phòng tắm" type="number"
+                                    value="">
 
 
 
@@ -138,7 +138,7 @@
 
                             <div class="input">
 
-                                <input name="area" placeHolder="Nhập lộ giới" type="number" value="">
+                                <input name="area" [(ngModel)]="loGioi" placeHolder="Nhập lộ giới" type="number" value="">
 
 
 
@@ -163,7 +163,8 @@
 
                             <div class="input">
 
-                                <textarea class="textarea" rows="5" placeholder="Nhập thông tin chi tiết"></textarea>
+                                <textarea class="textarea" [(ngModel)]="thongTinChiTiet" rows="5"
+                                    placeholder="Nhập thông tin chi tiết"></textarea>
 
 
 
@@ -179,22 +180,22 @@
                                 <div class="input">
                                     <div class="row">
                                         <div class="col-12">
-                                            <input id="bus" type="checkbox" value="" />
+                                            <input id="bus" type="checkbox" value="" [(ngModel)]="ti1" />
                                             <label style="    margin: 0px 10px;
                                             color: #484848;" for="bus">Gần trạm xe buýt</label>
                                         </div>
                                         <div class="col-12">
-                                            <input id="market" type="checkbox" value="" />
+                                            <input id="market" type="checkbox" value="" [(ngModel)]="ti2" />
                                             <label style="    margin: 0px 10px;
                                             color: #484848;" for="market">Gần chợ</label>
                                         </div>
                                         <div class="col-12">
-                                            <input id="school" type="checkbox" value="" />
+                                            <input id="school" type="checkbox" value="" [(ngModel)]="ti3" />
                                             <label style="    margin: 0px 10px;
                                             color: #484848;" for="school">Gần trường học</label>
                                         </div>
                                         <div class="col-12">
-                                            <input id="hospitol" type="checkbox" value="" />
+                                            <input id="hospitol" type="checkbox" value="" [(ngModel)]="ti4" />
                                             <label style="    margin: 0px 10px;
                                             color: #484848;" for="hospitol">Gần bệnh viện</label>
                                         </div>
@@ -210,18 +211,15 @@
                             <div class="title">
                                 <p style="font-size: 16px;font-weight: 700;">Địa chỉ</p>
                             </div>
-
-
-
                         </li>
                         <li class="content-input">
                             <div class="title">
                                 <p>Tỉnh/thành*</p>
                             </div>
                             <div class="input">
-                                <select name="branch">
+                                <select name="branch" [(ngModel)]="tinh">
                                     <option selected disabled>Chọn tỉnh/thành</option>
-                                    <option value="hcm">Thành phố Hồ Chí Minh</option>
+                                    <option value="Thành phố Hồ Chí Minh">Thành phố Hồ Chí Minh</option>
                                 </select>
                             </div>
 
@@ -232,22 +230,21 @@
                                 <p>Quận/Huyện*</p>
                             </div>
                             <div class="input">
-                                <select name="branch">
-                                    <option selected disabled>Chọn quận/huyện</option>
-                                    <option value="1">Quận 1</option>
-                                    <option value="1">Quận 2</option>
-                                    <option value="1">Quận 3</option>
-                                    <option value="1">Quận 4</option>
-                                    <option value="1">Quận 5</option>
-                                    <option value="1">Quận 6</option>
-                                    <option value="1">Quận 7</option>
-                                    <option value="1">Quận 8</option>
-                                    <option value="1">Quận 9</option>
-                                    <option value="1">Quận 10</option>
-                                    <option value="1">Quận 11</option>
-                                    <option value="1">Quận Thủ Đức</option>
-                                    <option value="1">Quận Bình Thạnh</option>
-                                    <option value="1">Quận Gò Vấp</option>
+                                <select name="branch" [(ngModel)]="quan">
+                                    <option value="Quận 1" selected>Quận 1</option>
+                                    <option value="Quận 2">Quận 2</option>
+                                    <option value="Quận 3">Quận 3</option>
+                                    <option value="Quận 4">Quận 4</option>
+                                    <option value="Quận 5">Quận 5</option>
+                                    <option value="Quận 6">Quận 6</option>
+                                    <option value="Quận 7">Quận 7</option>
+                                    <option value="Quận 8">Quận 8</option>
+                                    <option value="Quận 9">Quận 9</option>
+                                    <option value="Quận 10">Quận 10</option>
+                                    <option value="Quận 11">Quận 11</option>
+                                    <option value="Quận Thủ ĐỨc">Quận Thủ Đức</option>
+                                    <option value="Quận Bình Thạnh">Quận Bình Thạnh</option>
+                                    <option value="Quận Gò Vấp">Quận Gò Vấp</option>
                                 </select>
                             </div>
 
@@ -260,7 +257,8 @@
 
                             <div class="input">
 
-                                <textarea class="textarea" rows="2" placeholder="Nhập địa chỉ"></textarea>
+                                <textarea class="textarea" [(ngModel)]="diachi" rows="2"
+                                    placeholder="Nhập địa chỉ"></textarea>
 
 
 
@@ -293,7 +291,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="themPhongMoi()">Xác nhận</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="themPhongMoi()">Xác
+                        nhận</button>
                 </div>
             </div>
         </div>

@@ -43,9 +43,11 @@ export class ChiTietComponent implements OnInit {
     loGioi:string,
     thongTinChiTiet:string,
     tienIch:string,
-  }[] = data; 
+  }[] = []; 
 
   ngOnInit(): void {
+    let objectArray = localStorage.getItem("data");
+    this.arrayRoot = JSON.parse(objectArray || '{}');
     this.id = this.router.snapshot.params.id;
     for (let i = 0; i < this.arrayRoot.length; i++) {
       if (this.arrayRoot[i].id == this.id) {

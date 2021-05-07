@@ -29,6 +29,26 @@ export class QuanLyComponent implements OnInit {
   // }
   count = 11;
   url: any;
+  ten: string = "";
+  dienTich: string = "";
+  gia: string= "";
+  tinh: string= "";
+  quan: string= "";  
+  phuong: string= "";
+  diachi: string= "";
+  ngayThem: string= "";
+  loai: string= "";
+  chieuDai: string= "";
+  chieuRong: string= "";
+  phongNgu: string= "";
+  phongTam: string= "";
+  loGioi: string= "";
+  thongTinChiTiet: string= "";
+  tienIch: string= "";
+  ti1:boolean = false;
+  ti2:boolean = false;
+  ti3:boolean = false;
+  ti4:boolean = false;
 
   constructor(private _router: Router) { }
 
@@ -48,10 +68,65 @@ export class QuanLyComponent implements OnInit {
     }
   }
 
-  themPhongMoi(){
-    let id = this.count;
-    
-    console.log("Them phong moi thanh cong");
+  themPhongMoi() {
+    if(this.ti1){
+      this.tienIch+="1,"
+    }
+    if(this.ti2){
+      this.tienIch+="2,"
+    }
+    if(this.ti3){
+      this.tienIch+="3,"
+    }
+    if(this.ti4){
+      this.tienIch+="4,"
+    }
+    this.tienIch = this.tienIch.substring(0,this.tienIch.length-1);
+    let objectArray = localStorage.getItem("data");
+    let arrayRoot: {
+      id: number,
+      ten: string,
+      dienTich: string,
+      gia: number,
+      tinh: string,
+      quan: string,
+      phuong: string,
+      diachi: string,
+      hinh: string,
+      ngayThem: string,
+      loai: number,
+      chieuDai: string,
+      chieuRong: string,
+      phongNgu: string,
+      phongTam: string,
+      loGioi: string,
+      thongTinChiTiet: string,
+      tienIch: string,
+    }[] = JSON.parse(objectArray || '{}');
+
+    let id = arrayRoot.length + 1;
+    let newObject = {
+      id: id,
+      ten: this.ten,
+      dienTich: this.dienTich,
+      gia: parseInt(this.gia),
+      tinh: this.tinh,
+      quan: this.quan,
+      phuong: this.phuong,
+      diachi: this.diachi,
+      hinh: this.url,
+      ngayThem: this.ngayThem,
+      loai: parseInt(this.loai),
+      chieuDai: this.chieuDai,
+      chieuRong: this.chieuRong,
+      phongNgu: this.phongNgu,
+      phongTam: this.phongTam,
+      loGioi: this.loGioi,
+      thongTinChiTiet: this.thongTinChiTiet,
+      tienIch: this.tienIch
+    }
+    arrayRoot.push(newObject);
+    localStorage.setItem("data", JSON.stringify(arrayRoot));
     this._router.navigate(['']);
   }
 

@@ -1,7 +1,6 @@
 import { invalid } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { SharedService } from '../shared-service-login';
 
 
 
@@ -27,7 +26,7 @@ export class DangNhapComponent implements OnInit {
   isTrue = false;
   data: any;
 
-  constructor(private _router: Router, private _sharedService: SharedService) { }
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
   }
@@ -65,11 +64,10 @@ export class DangNhapComponent implements OnInit {
         this.isShowInvalid = true;
       }
     } else {
-      this._sharedService.update(true);
+      let object = { username: this.username, password: this.password };
+      localStorage.setItem("user", JSON.stringify(object));
       this._router.navigate(['']);
     }
-
-
   }
   // isLogin1(){
   //   this.isLogin1.emit(this.checkLogin);

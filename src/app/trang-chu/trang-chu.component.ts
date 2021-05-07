@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from '../shared-service-login';
 import { Router } from '@angular/router';
 import data from "../_files/data.json";
 
@@ -40,7 +39,7 @@ export class TrangChuComponent implements OnInit {
     loGioi: string,
     thongTinChiTiet: string,
     tienIch: string,
-  }[] = data;
+  }[] = [];
   array: {
     id: number,
     ten: string,
@@ -60,9 +59,10 @@ export class TrangChuComponent implements OnInit {
     loGioi: string,
     thongTinChiTiet: string,
     tienIch: string,
-  }[] = data;
+  }[] = [];
 
-  constructor(private _router: Router, private _sharedService: SharedService) {
+  constructor(private _router: Router) {
+
   }
 
   remove(id: any) {
@@ -84,8 +84,8 @@ export class TrangChuComponent implements OnInit {
         count++;
       }
     }
+    localStorage.setItem("data", JSON.stringify(this.arrayRoot));
   }
-
 
   sort() {
     // lam rỗng
@@ -224,12 +224,19 @@ export class TrangChuComponent implements OnInit {
   }
 
   dangXuat() {
-    this._sharedService.update(false);
-    this._router.navigate(['dang-nhap']);
+    localStorage.removeItem("user");
+    window.location.reload();
   }
 
   ngOnInit(): void {
-    this._sharedService.service.subscribe(data => this.iSSuccessLogin = data);
+    // localStorage.setItem("data",JSON.stringify(this.arrayRoot));
+    let user: { username: string, password: string } = JSON.parse(localStorage.getItem("user") || '{}');
+    if (user.username != undefined) {
+      this.iSSuccessLogin = true;
+    }
+    let objectArray = localStorage.getItem("data");
+    this.arrayRoot = JSON.parse(objectArray || '{}');
+    this.array = JSON.parse(objectArray || '{}');
   }
 
   getPriceFormat(gia: any) {
